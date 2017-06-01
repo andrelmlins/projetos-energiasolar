@@ -1,12 +1,32 @@
 <?php
-	if(isset($_POST['pais']) && isset($_POST['cidade'])){
+	if(isset($_POST['cliente']) && isset($_POST['potencia']) && isset($_POST['cidade']) && isset($_POST['estado']) && isset($_POST['responsavel']) && isset($_POST['mes']) && isset($_POST['ano']) && isset($_POST['imagem1']) && isset($_POST['imagem2']) && isset($_POST['imagem3']) && isset($_POST['url'])){
 		$data_atual = date("Y-m-d"); 
-		$wpdb->insert($wpdb->prefix."select_pais_cidade", array('pais'=>$_POST['pais'], 'cidade'=>$_POST['cidade'], 'data_cadastro'=>$data_atual));
+		$wpdb->insert(
+			$wpdb->prefix."projetos_energiasolar",
+			array(
+				'cliente'=>$_POST['cliente'],
+				'potencia'=>$_POST['potencia'],
+				'cidade'=>$_POST['cidade'],
+				'estado'=>$_POST['estado'],
+				'responsavel'=>$_POST['responsavel'],
+				'mes'=>$_POST['mes'],
+				'ano'=>$_POST['ano'],
+				'imagem1'=>$_POST['imagem1'],
+				'imagem2'=>$_POST['imagem2'],
+				'imagem3'=>$_POST['imagem3'],
+				'url'=>$_POST['url'],
+				'data_cadastro'=>$data_atual
+			)
+		);
 	} else if(isset($_POST['id'])) {
-		$wpdb->delete($wpdb->prefix."select_pais_cidade", array('id'=>$_POST['id']));
+		$wpdb->delete($wpdb->prefix."projetos_energiasolar", array('id'=>$_POST['id']));
+	} else {
+		if($_POST){
+			$error = true;
+		}
 	}
 	$estados = json_decode(file_get_contents(dirname(__FILE__)."/estados-cidades.json"))->estados;
-	$projetos = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."projetos-energiasolar");
+	$projetos = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."projetos_energiasolar");
 ?>
 <link type="text/css" rel="stylesheet" href="<?php echo get_bloginfo('wpurl') ?>/wp-content/plugins/select-pais-cidade/css/jquery.dataTables.css" />
 <script type="text/javascript" src="<?php echo get_bloginfo('wpurl') ?>/wp-content/plugins/select-pais-cidade/js/jquery.dataTables.js" ></script>
@@ -43,8 +63,17 @@
 	    }
 	    $('table').DataTable(config_datatable);
 
-	    $("estado").change(function(){
-
+	    $("select[name='estado'").change(function(){
+	    	var cidades = JSON.parse($("option[value='"+$(this).val()+"']").attr('cidades'));
+	    	$("select[name='cidade'] option").each(function(){
+	    		if($(this).attr('value')!="")$(this).remove();
+	    	});
+	    	for(var i=0; i<cidades.length; i++){
+	    		var option = $("<option/>");
+	    		option.text(cidades[i]);
+	    		option.attr('value',cidades[i]);
+	    		$("select[name='cidade']").append(option);
+	    	}
 	    });
 	});
 </script>
@@ -54,25 +83,80 @@
 <div class="clear"></div>
 
 <div class="adicionar-projeto">
-    <h2 id='title' style="display:inline-table;">Adicione um novo projeto:</h2>
+    <h2 >Adicione um novo projeto:</h2>
+    <?php if($error){ ?>
+    	<div class="alerta">
+    		Todos os campos são obrigatórios.
+    	</div>
+    <?php } ?>
     <form method="post">
+    	<div class="row">
+    		<div class="column column-8">
+    			<input type="text" name="cliente" placeholder="Cliente">
+    		</div>
+    		<div class="column column-4">
+    			<input type="text" name="potencia" placeholder="Potência">
+    		</div>
+    	</div>
     	<div class="row">
     		<div class="column column-3">
 			    <select name="estado">
-			    	<option value="" selected>Estado</option>
+			    	<option value="" disabled selected>Estado</option>
 			    	<?php foreach($estados as $estado){ ?>
-			    		<option value="<?php echo $estado->sigla ?>" cidades="<?php echo $estado->cidades?>"><?php echo $estado->nome ?></option>
+			    		<option value="<?php echo $estado->sigla ?>" cidades='<?php echo json_encode($estado->cidades); ?>'><?php echo $estado->nome ?></option>
 			    	<?php } ?>
 		   		</select>
 		    </div>
 		    <div class="column column-3">
 			    <select name="cidade">
-			    	<option value="" selected>Cidade</option>
+			    	<option value="" disabled selected>Cidade</option>
 			    </select>
 		    </div>
-		    <input type="text" style="width: 300px" name="cidade" placeholder="Cidade">
-		    <button type="submit">Adicionar</button>
+		    <div class="column column-3">
+    			<select name="mes">
+			    	<option value="" disabled selected>Mês</option>
+			    	<option value="Janeiro">Janeiro</option>
+			    	<option value="Feveiro">Fevereiro</option>
+			    	<option value="Março">Março</option>
+			    	<option value="Abril">Abril</option>
+			    	<option value="Maio">Maio</option>
+			    	<option value="Junho">Junho</option>
+			    	<option value="Julho">Julho</option>
+			    	<option value="Agosto">Agosto</option>
+			    	<option value="Setembro">Setembro</option>
+			    	<option value="Outubro">Outubro</option>
+			    	<option value="Novembro">Novembro</option>
+			    	<option value="Dezembro">Dezembro</option>
+			    </select>
+		    </div>
+		    <div class="column column-3">
+    			<input type="text" name="ano" placeholder="Ano">
+		    </div>
 	    </div>
+	    <div class="row">
+		    <div class="column column-6">
+    			<input type="text" name="responsavel" placeholder="Responsável">
+		    </div>
+		    <div class="column column-6">
+    			<input type="text" name="url" placeholder="Url">
+		    </div>
+	    </div>
+	    <div class="row">
+	    	<div class="column column-4">
+    			<input type="text" name="imagem1" placeholder="Url da Imagem Principal">
+		    </div>
+		    <div class="column column-4">
+    			<input type="text" name="imagem2" placeholder="Url da Imagem Lateral">
+		    </div>
+		    <div class="column column-4">
+    			<input type="text" name="imagem3" placeholder="Url da Imagem Lateral">
+		    </div>
+	    </div>
+    	<div class="row">
+		    <div class="column column-12">
+			    <button type="submit">Adicionar</button>
+		    </div>
+		</div>
     </form>
 </div>
 
@@ -84,9 +168,12 @@
   	<thead> 
 	  	<tr> 
 		    <th>ID</th>
-		    <th>País</th>
-			<th>Cidade</th> 
-			<th>Data</th> 
+		    <th>Cliente</th>
+		    <th>Potência</th>
+		    <th>Cidade/Estado</th>
+			<th>Mes/Ano</th> 
+			<th>Responsável</th> 
+			<th>URL</th> 
 			<th> </th> 
 	  	</tr> 
   	</thead> 
@@ -94,15 +181,18 @@
   	<tbody> 
 <?php
 
-	foreach($paisesadicionados as $paises) {
+	foreach($projetos as $projeto) {
 	?>
 	  	<tr style="text-align: center"> 
-		    <td style="width: 10%;"><?php echo $paises->id ?></td>
-			<td style="width: 25%;"><?php echo $paises->pais ?></td>
-			<td style="width: 25%;"><?php echo $paises->cidade ?></td>
-			<td style="width: 25%;"><?php echo date('d/m/Y',strtotime($paises->data_cadastro)); ?></td>
-			<td style="width: 15%;">
-			<form method="post"><input type="hidden" name="id" value="<?php echo $paises->id ?>"><button type="submit">Excluir</button></form>
+		    <td><?php echo $projeto->id ?></td>
+			<td><?php echo $projeto->cliente ?></td>
+			<td><?php echo $projeto->potencia ?></td>
+			<td><?php echo $projeto->mes." / ".$projeto->ano ?></td>
+			<td><?php echo $projeto->cidade." / ".$projeto->estado ?></td>
+			<td><?php echo $projeto->responsavel ?></td>
+			<td><?php echo $projeto->url ?></td>
+			<td>
+			<form method="post"><input type="hidden" name="id" value="<?php echo $projeto->id ?>"><button type="submit">Excluir</button></form>
 			</td>
 		</tr>
 	<?php } ?>

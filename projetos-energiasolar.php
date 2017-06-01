@@ -40,7 +40,7 @@ function select_install_projetos_energiasolar() {
    global $wpdb;
    require_once(ABSPATH.'wp-admin/includes/upgrade.php');      
 
-   $table_name = $wpdb->prefix."projetos-energiasolar";
+   $table_name = $wpdb->prefix."projetos_energiasolar";
    
   	$sql = "CREATE TABLE ".$table_name." (
 	  id int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -48,7 +48,7 @@ function select_install_projetos_energiasolar() {
 	  cidade varchar(255),
 	  estado varchar(2),
 	  responsavel varchar(255),
-	  potencia double,
+	  potencia varchar(15),
 	  mes varchar(20),
 	  ano varchar(5),
 	  imagem1 varchar(255),

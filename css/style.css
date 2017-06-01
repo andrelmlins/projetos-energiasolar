@@ -107,6 +107,7 @@
 
 .row{
 	box-sizing: border-box;
+	margin-bottom: 10px;
 }
 .row:before,
 .row:after {
@@ -138,6 +139,16 @@
 	height: auto;
 }
 
+.column-8{
+  	width: 66.1%;
+	height: auto;
+}
+
+.column-12 {
+  	width: 100%;
+	height: auto;
+}
+
 .column{
 	box-sizing: border-box;
 	position: relative;
@@ -151,6 +162,8 @@
 	background:white;
 	padding:15px;
 	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+	display: block;
+	position: relative;
 }
 
 .adicionar-projeto h2{
@@ -160,4 +173,40 @@
 
 .adicionar-projeto select{
 	width: 100%;
+	box-shadow: none;
+	padding: 3px;
+  	box-sizing: content-box;
+}
+
+.adicionar-projeto input{
+	width: 100%;
+	box-shadow: none;
+	padding: 7px;
+}
+
+.adicionar-projeto button{
+	width: 100%;
+	border: none;
+	background: #78909c;
+	border-radius: 3px;
+	padding: 8px;
+	color:white;
+	transition: 0.2s all;
+	cursor: pointer;
+	margin: 0px;
+}
+
+.adicionar-projeto button:hover{
+	opacity: 0.8;
+	transition: 0.2s all;
+}
+
+.alerta{
+	border-radius: 3px;
+    margin: 0 0 20px 0;
+    padding: 15px 30px 15px 15px;
+    border-left: 5px solid #eee;
+    border-color: #c23321;
+    color: #fff;
+    background-color: #dd4b39 ;
 }
