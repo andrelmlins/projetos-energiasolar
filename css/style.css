@@ -233,17 +233,17 @@ list-style-type: none;
 
 }
 
-.img-principal-projeto{
-	width: 60% !important;
-	float: left !important;
-	margin-right: 5px  !important;
-	height: 310px  !important;
+img.img-principal-projeto{
+	width: 60%;
+	float: left;
+	margin-right: 5px;
+	height: 310px;
 }
 
-.img-secundaria{
-	width: 30% !important;
-	margin-left: -15px !important;
-	max-height: 155px !important;
+img.img-secundaria{
+	width: 30%;
+	margin-left: -15px;
+	max-height: 155px;
 }
 
 .img-estado{
@@ -251,6 +251,7 @@ list-style-type: none;
     border-color: #b0aead !important;
     border-style: solid !important;
     border-width: 1px !important;
+    top: 5px;;
 }
 .info-legenda{
 	background-color: #eee !important;
@@ -273,6 +274,7 @@ list-style-type: none;
     border-width: 0px 1px 1px 1px !important;
     border-style: solid !important;
     border-color: #d7cfd8 !important;
+    float: left !important;
 }
 
 .legenda{
@@ -280,6 +282,7 @@ list-style-type: none;
 	color: #CE5520;
 	margin-bottom: 5px !important;
 	padding-top: 5px !important;
+	text-align: center !important;
 }
 
 .legenda-cliente{
