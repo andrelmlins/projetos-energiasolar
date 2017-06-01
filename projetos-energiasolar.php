@@ -11,7 +11,6 @@ global $wpdb;
 
 add_action('admin_menu', 'add_page_projetos_energiasolar');
 register_activation_hook(__FILE__,'select_install_projetos_energiasolar');
-add_filter('the_content', 'select_page_projetos_energiasolar');
 
 
 function add_page_projetos_energiasolar() {
@@ -23,17 +22,16 @@ function add_page_admin_projetos_energiasolar() {
     include('admin.php');
 }
 
-function select_page_projetos_energiasolar($content) {
+function select_page_projetos_energiasolar() {
 	global $wpdb;
 	ob_start();
     include('projetos-page.php');
 	$html = ob_get_clean();
-	$tags = '[projetos-energiasolar]';
-	$subst = $html;
 	
-	
-	return str_replace($tags,$subst,$content);
+	return $html;
 }
+
+add_shortcode('projetos-energiasolar', 'select_page_projetos_energiasolar');
 
 
 function select_install_projetos_energiasolar() {
