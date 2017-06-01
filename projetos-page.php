@@ -70,19 +70,19 @@ if($_POST['cidade'] != '' && $_POST['estado'] != ''){
 					<div class="col-xs-12 col-md-2 color-projeto">
 						<p style="margin-left: 20px;"> Legenda:  </p>
 					</div>
-					<div class="col-xs-6 col-md-2 color-grey">
+					<div class="col-xs-12 col-md-2 color-grey">
 						<i class="fa fa-map-marker" aria-hidden="true"></i>
 						<span> Localização</span> 
 					</div>
-					<div class="col-xs-6 col-md-2 color-grey">
+					<div class="col-xs-12 col-md-2 color-grey">
 						<i class="fa fa-user" aria-hidden="true"></i>
 						<span> Responsável</span>  
 					</div>
-					<div class="col-xs-6 col-md-2 color-grey">
+					<div class="col-xs-12 col-md-2 color-grey">
 						<i class="fa fa-calendar" aria-hidden="true"></i>
 						<span> Data do Projeto</span> 
 					</div>
-					<div class="col-xs-6 col-md-2 color-grey">
+					<div class="col-xs-12 col-md-2 color-grey">
 						<i class="fa fa-bolt" aria-hidden="true"></i>
 						<span> Potência</span>
 					</div>
