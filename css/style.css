@@ -1,0 +1,163 @@
+.abstract_form_explanation {
+	font-style: italic;
+	margin-bottom: 5px;
+}
+
+#abs_form input {
+	width: 100%;
+	font-size: 17px;
+}
+
+#abs_form select {
+	width: 100%;
+	height: 40px;
+}
+
+#abs_form textarea {
+	width: 100%;
+	height: 200px;
+}
+
+#abs_form .page-title {
+	margin-top: 20px;
+}
+
+#abs_form .red {
+	color: red;
+	font-weight: bolder;
+}
+
+#abs_form p{
+	font-weight: bold;
+	margin: 5px 0px;
+	margin-top: 14px;
+}
+
+#loginform{
+	border: 1px solid #CCC;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+#loginform input[type="text"],input[type="password"],input[type="submit"] {
+	width: 100%;
+}
+
+#abs_form button{
+	padding: 12px;
+	width: 100%;
+	margin-top: 20px;
+	color:white !important;
+	background: #FF8E1D;
+	transition: all 1s;
+}
+
+#abs_form button:hover{
+	background: #d06800;
+	transition: all 1s;
+	color:white;
+}
+
+#abs_form button:disabled{
+	background: grey;
+}
+
+#abs_form button:disabled:hover{
+	background: #555;
+}
+
+.abstract_form_add_attachments {
+	padding-left: 20px;
+	background: url(../images/attach.png) left center no-repeat;
+	margin: 10px;
+	cursor: pointer;
+	line-height: 20px;
+}
+
+.abstract_form_add_coauthor {
+	padding-left: 20px;
+	background: url(../images/user.png) left center no-repeat;
+	margin: 10px;
+	cursor: pointer;
+	line-height: 20px;
+}
+
+.abstract_form_attachment {
+	height: 30px;
+}
+
+.abstract_attachment_row {
+	height: 30px;
+	line-height:30px;
+}
+
+.abstract_form_error {
+	color: #ff0000;
+	font-weight: bold;
+}
+
+.abstract_form_table_label {
+	text-align: left;
+	width: 100px;
+}
+
+.abstract_form_table_row {
+	height: 25px;
+}
+
+.row{
+	box-sizing: border-box;
+}
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+ 
+.row:after {
+  clear: both;
+}
+
+.column-2{
+	width: 15.3333333333%;
+	height: auto;
+}
+
+.column-3 {
+  	width: 23.8%;
+  	height: auto;
+}
+
+.column-4{
+	width: 32.2666666667%;
+	height: auto;
+}
+
+.column-6 {
+  	width: 49.2%;
+	height: auto;
+}
+
+.column{
+	box-sizing: border-box;
+	position: relative;
+		float: left;
+}
+.column + .column {
+	margin-left: 1.6%;
+}
+
+.adicionar-projeto{
+	background:white;
+	padding:15px;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.adicionar-projeto h2{
+	margin: 0px;
+	margin-bottom: 20px;
+}
+
+.adicionar-projeto select{
+	width: 100%;
+}
