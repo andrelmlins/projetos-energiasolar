@@ -26,7 +26,7 @@ function add_page_admin_projetos_energiasolar() {
 function select_page_projetos_energiasolar($content) {
 	global $wpdb;
 	ob_start();
-    include('select-page.php');
+    include('projetos-page.php');
 	$html = ob_get_clean();
 	$tags = '[projetos-energiasolar]';
 	$subst = $html;

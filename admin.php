@@ -28,8 +28,8 @@
 	$estados = json_decode(file_get_contents(dirname(__FILE__)."/estados-cidades.json"))->estados;
 	$projetos = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."projetos_energiasolar");
 ?>
-<link type="text/css" rel="stylesheet" href="<?php echo get_bloginfo('wpurl') ?>/wp-content/plugins/select-pais-cidade/css/jquery.dataTables.css" />
-<script type="text/javascript" src="<?php echo get_bloginfo('wpurl') ?>/wp-content/plugins/select-pais-cidade/js/jquery.dataTables.js" ></script>
+<link type="text/css" rel="stylesheet" href="<?php echo get_bloginfo('wpurl') ?>/wp-content/plugins/projetos-energiasolar/css/jquery.dataTables.css" />
+<script type="text/javascript" src="<?php echo get_bloginfo('wpurl') ?>/wp-content/plugins/projetos-energiasolar/js/jquery.dataTables.js" ></script>
 <link type="text/css" rel="stylesheet" href="<?php echo get_bloginfo('wpurl') ?>/wp-content/plugins/projetos-energiasolar/css/style.css" />
 <script>
 	jQuery(document).ready(function( $ ){
