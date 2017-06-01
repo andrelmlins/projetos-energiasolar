@@ -234,66 +234,66 @@ list-style-type: none;
 }
 
 .img-principal-projeto{
-	width: 60%;
-	float: left;
-	margin-right: 5px;
-	height: 310px;
+	width: 60% !important;
+	float: left !important;
+	margin-right: 5px  !important;
+	height: 310px  !important;
 }
 
 .img-secundaria{
-	width: 30%;
-	margin-left: -15px;
-	max-height: 155px;
+	width: 30% !important;
+	margin-left: -15px !important;
+	max-height: 155px !important;
 }
 
 .img-estado{
-	width: 25px;
-    border-color: #b0aead;
-    border-style: solid;
-    border-width: 1px;
+	width: 25px !important;
+    border-color: #b0aead !important;
+    border-style: solid !important;
+    border-width: 1px !important;
 }
 .info-legenda{
-	background-color: #eee;
-    color: #000000;
-    height: auto;
-    padding: 10px 0px 0px 5px;
-    min-height: 30px;
-    border-width: 0px 0px 1px 0px;
-    border-style: solid;
-    border-color: #ce5520;
-    text-transform: uppercase;
+	background-color: #eee !important;
+    color: #000000 !important;
+    height: auto !important;
+    padding: 10px 0px 0px 5px !important;
+    min-height: 30px !important;
+    border-width: 0px 0px 1px 0px !important;
+    border-style: solid !important;
+    border-color: #ce5520 !important;
+    text-transform: uppercase !important;
 }
 
 .legenda-box{
-	min-height: 40px;
-	height: 100%;
-    background-color: #fff;
-    margin-top: -8px;
-    width: calc(90% + 5px);
-    border-width: 0px 1px 1px 1px;
-    border-style: solid;
-    border-color: #d7cfd8;
+	min-height: 40px !important;
+	height: 100% !important;
+    background-color: #fff !important;
+    margin-top: -8px !important;
+    width: calc(90% + 5px) !important;
+    border-width: 0px 1px 1px 1px !important;
+    border-style: solid !important;
+    border-color: #d7cfd8 !important;
 }
 
 .legenda{
-	font-size: 15pt;
+	font-size: 15pt !important;
 	color: #CE5520;
-	margin-bottom: 5px;
-	padding-top: 5px;
+	margin-bottom: 5px !important;
+	padding-top: 5px !important;
 }
 
 .legenda-cliente{
-	width: 190px;
-    height: 30px;
-    background-image: url(../img/legenda_cliente.png);
-    position: absolute;
-    margin-top: 20px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    font-size: 11px;
-    padding-left: 10px;
+	width: 190px !important;
+    height: 30px !important;
+    background-image: url(../img/legenda_cliente.png) !important;
+    position: absolute !important;
+    margin-top: 20px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    color: #FFFFFF  !important;
+    text-transform: uppercase !important;
+    font-size: 11px !important;
+    padding-left: 10px !important;
 }
 
 .filtros{
