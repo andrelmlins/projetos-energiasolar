@@ -108,7 +108,7 @@ if($_POST['cidade'] != '' && $_POST['estado'] != ''){
 								</div>
 								<div class="col-xs-12 col-md-12">
 									<div class="legenda-box"> 
-										<div class="col-xs-6 col-md-1">
+										<div class="col-xs-12 col-md-2">
 											<p class="legenda"> 
 												<img class="img-estado" src="<?php echo get_bloginfo('wpurl') ?>/wp-content/plugins/projetos-energiasolar/img/<?php echo strtolower($projeto->estado) ?>.svg"/> 
 												<span style="font-size:12px;">
@@ -116,14 +116,14 @@ if($_POST['cidade'] != '' && $_POST['estado'] != ''){
 												</span>
 											</p>
 										</div>
-										<div class="col-xs-6 col-md-3">
+										<div class="col-xs-12 col-md-3">
 											<p class="legenda"> <i class="fa fa-map-marker" aria-hidden="true"></i> 
 												<span style="font-size:12px;">
 													<?php echo $projeto->cidade . ', ' . $projeto->estado; ?> 
 												</span>
 											</p>
 										</div>
-										<div class="col-xs-6 col-md-3">
+										<div class="col-xs-12 col-md-3">
 											<p class="legenda">
 												<i class="fa fa-user" aria-hidden="true"></i> 
 												<span style="font-size:12px;">
@@ -131,7 +131,7 @@ if($_POST['cidade'] != '' && $_POST['estado'] != ''){
 												</span>
 											</p>
 										</div>
-										<div class="col-xs-6 col-md-2">
+										<div class="col-xs-12 col-md-2">
 											<p class="legenda">
 												<i class="fa fa-calendar" aria-hidden="true"></i>
 												<span style="font-size:12px;">
@@ -140,7 +140,7 @@ if($_POST['cidade'] != '' && $_POST['estado'] != ''){
 											</p>
 										</div>
 										
-										<div class="col-xs-6 col-md-2">
+										<div class="col-xs-12 col-md-2">
 											<p class="legenda">
 												<i class="fa fa-bolt" aria-hidden="true"></i>
 												<span style="font-size:12px;">
