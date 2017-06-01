@@ -245,6 +245,13 @@ list-style-type: none;
 	margin-left: -15px;
 	max-height: 155px;
 }
+
+.img-estado{
+	width: 25px;
+    border-color: #b0aead;
+    border-style: solid;
+    border-width: 1px;
+}
 .info-legenda{
 	background-color: #eee;
     color: #000000;
