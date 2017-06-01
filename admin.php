@@ -190,7 +190,7 @@
 			<td><?php echo $projeto->mes." / ".$projeto->ano ?></td>
 			<td><?php echo $projeto->cidade." / ".$projeto->estado ?></td>
 			<td><?php echo $projeto->responsavel ?></td>
-			<td><?php echo $projeto->url ?></td>
+			<td><a href="<?php echo $projeto->url ?>"><?php echo $projeto->url ?></a></td>
 			<td>
 			<form method="post"><input type="hidden" name="id" value="<?php echo $projeto->id ?>"><button type="submit">Excluir</button></form>
 			</td>
