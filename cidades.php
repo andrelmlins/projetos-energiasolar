@@ -6,7 +6,7 @@ global $wpdb;
 
 if(isset($_POST['estado'])){
 	$estado = $_POST['estado'];
-	$cidades = $wpdb->get_results("SELECT cidade FROM ".$wpdb->prefix."projetos_energiasolar where estado = '".$estado."'");
+	$cidades = $wpdb->get_results("SELECT DISTINCT cidade FROM ".$wpdb->prefix."projetos_energiasolar where estado = '".$estado."'");
 	echo json_encode($cidades);
 }
 
